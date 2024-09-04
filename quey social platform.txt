@@ -30,5 +30,17 @@ LEFT JOIN likes l ON p.id = l.post_id
 GROUP BY p.id;
 
 Risultato 165
+------------------------------------------------------------
 
+Ordina gli utenti per il numero di media caricati
+
+
+SELECT u.username, COUNT(mp.media_id) AS numero_media
+FROM users u
+JOIN posts p ON u.id = p.user_id
+JOIN media_post mp ON p.id = mp.post_id
+GROUP BY u.username
+ORDER BY numero_media DESC;
+
+Risultato 25
 
