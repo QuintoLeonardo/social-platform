@@ -20,3 +20,15 @@ LEFT JOIN likes l ON p.id = l.post_id
 WHERE l.post_id IS NULL;
 
 risultato 13
+-----------------------------------------------------
+
+Conta il numero di like per ogni post
+
+SELECT p.id, p.title, COUNT(l.post_id) AS numero_likes
+FROM posts p
+LEFT JOIN likes l ON p.id = l.post_id
+GROUP BY p.id;
+
+Risultato 165
+
+
