@@ -1,0 +1,11 @@
+Seleziona gli utenti che hanno postato almeno un video
+
+
+SELECT DISTINCT u.username
+FROM users u
+JOIN posts p ON u.id = p.user_id
+JOIN media_post mp ON p.id = mp.post_id
+JOIN medias m ON mp.media_id = m.id
+WHERE m.type = 'video';
+
+risultatuo 25
