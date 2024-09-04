@@ -8,4 +8,15 @@ JOIN media_post mp ON p.id = mp.post_id
 JOIN medias m ON mp.media_id = m.id
 WHERE m.type = 'video';
 
-risultatuo 25
+risultato 25
+----------------------------------------------------------
+
+Seleziona tutti i post senza like
+
+
+SELECT p.id, p.title
+FROM posts p
+LEFT JOIN likes l ON p.id = l.post_id
+WHERE l.post_id IS NULL;
+
+risultato 13
