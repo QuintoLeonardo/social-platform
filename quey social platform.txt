@@ -43,4 +43,16 @@ GROUP BY u.username
 ORDER BY numero_media DESC;
 
 Risultato 25
+------------------------------------------------------------
 
+Ordina gli utenti per il totale di like ricevuti nei loro post
+
+
+SELECT u.username, COUNT(l.post_id) AS numero_likes_totale
+FROM users u
+JOIN posts p ON u.id = p.user_id
+LEFT JOIN likes l ON p.id = l.post_id
+GROUP BY u.username
+ORDER BY numero_likes_totale DESC;
+
+risultato 25
